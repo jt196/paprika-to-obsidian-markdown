@@ -228,6 +228,7 @@ def convert_paprika(paprika_file, target_vault, resource_folder, template_file):
     extract_nested_zip(paprika_file, ".temp/")
     target = correct_path(target_vault)
     resource = correct_path(resource_folder)
+    print(target, resource)
     json_manipulate(".temp/", target, resource, template_file)
     remove_temp_files(".temp/")
     # print(paprika_file, target_vault, resource_folder, template_file)
