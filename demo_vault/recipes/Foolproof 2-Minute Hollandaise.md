@@ -36,20 +36,6 @@ authors: |
 ---
 # Name: `=this.name` 
 
-<div style="width: 100%;">  
-<!-- THE LEFT COLUMN -->  
-<div style="width: 48%; float: left; margin-right: 4%;">  
-<script>dajaviewjs here</script>  
-</div>  
-<!-- END THE LEFT COLUMN -->  
-  
-<!-- THE RIGHT COLUMN -->  
-<div style="width: 48%; float: left;">  
-<script>dajaviewjs here</script>  
-</div>  
-<!-- END THE RIGHT COLUMN -->  
-</div>
-
 ```dataviewjs
 var servings = dv.current().servings
 var scale = dv.current().scale

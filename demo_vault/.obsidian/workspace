@@ -7,8 +7,11 @@
         "id": "cc188e39c4deffeb",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "recipes/Austrian-Style Potato Salad (Erdäpfelsalat).md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -65,6 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "recipes/Austrian-Style Potato Salad (Erdäpfelsalat).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,6 +99,7 @@
   },
   "active": "cc188e39c4deffeb",
   "lastOpenFiles": [
+    "recipes/Austrian-Style Potato Salad (Erdäpfelsalat).md",
     "test_note.md",
     "dataview_js_ingredients.md",
     "dataview_js_photos.md",

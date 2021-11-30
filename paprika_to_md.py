@@ -46,7 +46,8 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
     # Checking source folder and template exist
     if not os.path.exists(sourceFolder):
         sys.exit("Source folder path incorrect, please re-enter")
-    if not os.path.exists(template):
+    template_file = "templates/" + template
+    if not os.path.exists(template_file):
         sys.exit("Template file path incorrect, please re-enter")
     tag_map = tag.tag_con
     # filter the tag list removing all but value matches for authors
@@ -131,12 +132,10 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
                     # substitute those tags for the author names
                     recipe_authors = auth_pattern.sub(lambda x: authors[x.group()], str(recipe_tags_filtered))
                     recipe_authors = ast.literal_eval(recipe_authors)
-                    # print("Authors: " + recipe_authors)
                     my_authors = ""
                     if recipe_authors:
                         for author in recipe_authors:
                             my_authors += "\n  " + str(author)
-                            # print("Author: " + author)
                     recipe_photo_data = recipe_data["photo_data"]
                     recipe_source_url = recipe_data["source_url"]
                     recipe_cook_time = recipe_data["cook_time"]
@@ -159,7 +158,6 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
                     else: 
                         # if no entry for servings, make it 1
                         recipe_servings = [1]
-                    # print(recipe_categories)
                     # save the recipe thumbnail to file
                     if recipe_photo_data:
                         # decode photo data
@@ -184,7 +182,6 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
                             g.write(recipe_jpg)
                             g.close()
                     # parse the photo list to make them yml format
-                    # photo_list = "\n  - " + "\n  - ".join(photo_list)
                     photo_list = "".join(photo_list)
                     # add relative path to recipe_photo if exists
                     if recipe_photo:
@@ -214,9 +211,7 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
                         'photo_list': photo_list,
                         'my_authors': my_authors
                         }
-                    # # this will filter items out of the array with no values, but it fucks the templating system. 
-                    # nd = {k: v for k, v in d.items() if v}
-                    with open(template, "r") as f:
+                    with open(template_file, "r") as f:
                         src = Template(f.read())
                         result = src.substitute(d)
                         g = open(targetFolder + recipe_name + ".md", "w")
@@ -228,9 +223,7 @@ def convert_paprika(paprika_file, target_vault, resource_folder, template_file):
     extract_nested_zip(paprika_file, ".temp/")
     target = correct_path(target_vault)
     resource = correct_path(resource_folder)
-    print(target, resource)
     json_manipulate(".temp/", target, resource, template_file)
     remove_temp_files(".temp/")
-    # print(paprika_file, target_vault, resource_folder, template_file)
 
 convert_paprika(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
