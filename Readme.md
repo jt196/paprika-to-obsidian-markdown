@@ -4,7 +4,9 @@ This is a simple Python script that primarily will convert your Paprika recipes 
 
 It is built for use in Obsidian using the Dataview plugin, but you can use this to convert your recipe files into markdown, with some loss in functionality.
 
-This is not (*quite*) intended to replace Paprika as your recipe manager, but it does manage to repeat some basic functionality, including scaling and tag usage. 
+This is not (*quite*) intended to replace Paprika as your recipe manager, but it does manage to repeat some basic functionality, including scaling and tag usage.
+
+I'll probably be tweaking the script a bit and working on the templates/dataview files going forward. I'll probably use Paprika for capture at the very least for the time being, but once you've got the workflow sorted, it'll only take a minute or so to export your recipes to a vault. The actual processing time I've got at less than 10 seconds for over 600 recipes. 
 
 # Set Up
 ## Requirements: 
