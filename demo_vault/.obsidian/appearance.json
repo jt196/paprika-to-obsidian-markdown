@@ -1,8 +1,0 @@
-{
-  "baseFontSize": 16,
-  "cssTheme": "Cybertron",
-  "enabledCssSnippets": [
-    "note-width",
-    "prettier-tags"
-  ]
-}

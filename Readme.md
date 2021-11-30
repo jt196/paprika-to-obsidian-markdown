@@ -14,17 +14,20 @@ This is not (*quite*) intended to replace Paprika as your recipe manager, but it
 ## Quick Start
 
 1. Clone the repo to a folder of your choice.
-2. Export your Paprika recipes into the repo folder. You'll need to make sure this is in the format ".paprikarecipes" and NOT HTML. 
+2. Export your Paprika recipes into the repo folder. You'll need to make sure this is in the format ".paprikarecipes" and NOT HTML. You'll be able to choose the "Paprika Recipe Format" in the pop up. More info [here](https://www.paprikaapp.com/help/windows/#exportrecipes). You can also right click on a selection of recipes and share > export. 
 3. Open up a Terminal window in the repo folder. 
 4. Run the command `python paprika_to_md.py "Archive.paprikarecipes" "my_vault/recipes" "_resources" "template_dataview.md"`. 
-5. Your Paprika recipes should be exported to the folder "my_vault" in the working directory. Images will be stored in a subfolder "_resources".
+5. Your Paprika recipes should be exported to the folder *"my_vault/recipes"* in the working directory. Images will be stored in a subfolder "_resources".
+6. You can move this folder into your main vault, just make sure that you copy the resources folder with it. 
 # Demo Vault
 
-I've added a demo vault with some demo recipes and a basic set up. This does include the [Cybertron theme](https://github.com/nickmilo/Cybertron) and the [dataview plugin](https://github.com/blacksmithgu/obsidian-dataview/).
+I've added a demo vault zipfile with some demo recipes and a basic set up. This does include the [Cybertron theme](https://github.com/nickmilo/Cybertron) and the [dataview plugin](https://github.com/blacksmithgu/obsidian-dataview/).
 
-You *should* just be able to open the vault and have a play around with the recipes in there. I'm not totally sure if this won't cause any issues on other systems, but it seemed like an idea to show folks what it looked like without any Paprika import files to play with.
+You *should* just be able to unzip the vault and open it with Obsidian to have a play around with the recipes in there. I'm not totally sure if this won't cause any issues on other systems (mine is MacOS), but it seemed like an idea to show folks what it looked like without any Paprika import files to play with.
 
 I've included a couple of simple views (source and author) using the regular dataview table format. Please hit me if you have some more interesting stuff to add. 
+
+Please note, this does have a ".obsidian" file in the folder, with the dataview plugin pre-installed. I've credited folks when possible, if there's any issues with me including any of this stuff, please ping and I'll do what I can to make folks happy. The sample recipes are pulled from various sites around the web, I'll leave them there, but if anyone gets stressy about things, I'll put some more generic data in there. 
 
 # Obsidian Set Up
 
@@ -108,6 +111,7 @@ Any Obsidian tag containing the string "authors", e.g. "recipes/authors/adamliaw
 If you wish to tailor this to your own tagging system, find the line `authors = positive_filter(tag_map, "authors")` in the script and change the "authors" after the `tag_map` to a string of your choice. This'll filter the tag list by whatever keyword you decide, and add the original Paprika tag to the "authors" section. 
 # Credits
 
+- [Obsidian](https://obsidian.md/) for writing the underlying software for these md recipes. 
 - [Dataview plugin](https://github.com/blacksmithgu/obsidian-dataview/) - used to display the recipe
 - [Cybertron theme](https://github.com/nickmilo/Cybertron) - Used in the demo vault
 - [Parse Ingredients](https://github.com/MichielMag/parse-ingredients) - Python library used to process the recipe ingredients.

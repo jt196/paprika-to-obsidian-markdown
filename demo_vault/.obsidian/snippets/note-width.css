@@ -1,8 +1,0 @@
-/* Viewing */
-.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
-    max-width: 95%;
-    }
-    /* Editing */
-    .markdown-source-view.is-readable-line-width .CodeMirror {
-    max-width: 95%;
-    }
