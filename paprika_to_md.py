@@ -226,4 +226,5 @@ def convert_paprika(paprika_file, target_vault, resource_folder, template_file):
     json_manipulate(".temp/", target, resource, template_file)
     remove_temp_files(".temp/")
 
-convert_paprika(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+#convert_paprika(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+convert_paprika("Archive.paprikarecipes", "my_vault/recipes", "_resources", "template_dataview.md")
