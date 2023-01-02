@@ -136,7 +136,7 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
                     if recipe_authors:
                         for author in recipe_authors:
                             my_authors += "\n  " + str(author)
-                    recipe_photo_data = recipe_data["photo_data"]
+                    recipe_photo_data = recipe_data.get("photo_data")
                     recipe_source_url = recipe_data["source_url"]
                     recipe_cook_time = recipe_data["cook_time"]
                     recipe_photo_large = recipe_data["photo_large"]
@@ -226,4 +226,5 @@ def convert_paprika(paprika_file, target_vault, resource_folder, template_file):
     json_manipulate(".temp/", target, resource, template_file)
     remove_temp_files(".temp/")
 
-convert_paprika(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+#convert_paprika(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+convert_paprika("Archive.paprikarecipes", "my_vault/recipes", "_resources", "template_dataview.md")
