@@ -62,7 +62,7 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
         for filename in files:
             if re.search(r'\.json$', filename):
                 p = Path(sourceFolder + filename)
-                with open(p) as json_file:
+                with open(p, encoding="utf-8") as json_file:
                     d = {}
                     recipe_data = json.load(json_file)
                     # assign variable, split according to line breaks, remove any empty entries
@@ -136,7 +136,7 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
                     if recipe_authors:
                         for author in recipe_authors:
                             my_authors += "\n  " + str(author)
-                    recipe_photo_data = recipe_data["photo_data"]
+                    recipe_photo_data = recipe_data.get("photo_data")
                     recipe_source_url = recipe_data["source_url"]
                     recipe_cook_time = recipe_data["cook_time"]
                     recipe_photo_large = recipe_data["photo_large"]
@@ -214,7 +214,7 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
                     with open(template_file, "r") as f:
                         src = Template(f.read())
                         result = src.substitute(d)
-                        g = open(targetFolder + recipe_name + ".md", "w")
+                        g = open(targetFolder + recipe_name + ".md", "w", encoding="utf-8")
                         g.write(result)
                         g.close()
 
