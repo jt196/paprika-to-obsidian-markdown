@@ -2,7 +2,6 @@
 name: $recipe_name
 source: $recipe_source
 ingredients: $recipe_ingredients
-source: $recipe_source
 difficulty: $recipe_difficulty
 photo_thumbnail: $recipe_photo
 image_url: $recipe_image_url
@@ -21,19 +20,27 @@ servings: $recipe_servings
 scale: $recipe_scale
 tags: $recipe_tags
 photos: $photo_list
-authors: |$my_authors
+author: |$my_authors
 ---
-# Name: `=this.name` 
+
+```button
+name Edit Recipe
+type command
+action MetaEdit: Run MetaEdit
+id EditMetaData
+```
+
+# Name: `=this.name`
 
 ```dataviewjs
 var servings = dv.current().servings
 var scale = dv.current().scale
-servings[1] ? dv.header(2, "Servings: " + (servings[0] * scale) + "-" + (servings[1]) * scale) : dv.header(2, "Servings: " + (servings[0] * scale)) 
+servings[1] ? dv.header(2, "Servings: " + (servings[0] * scale) + "-" + (servings[1]) * scale) : dv.header(2, "Servings: " + (servings[0] * scale))
 ```
 
 ```dataviewjs
 var path = dv.current().photo_thumbnail
-path === "None" ? "" : dv.paragraph('![image](' + path + ')') 
+path === "None" ? "" : dv.paragraph('![image](' + path + ')')
 ```
 
 ```dataviewjs

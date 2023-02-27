@@ -6,6 +6,9 @@
 # Folders
 demo_vault/
 my_vault/
+Paprika*/
+tandoor_scripts/
+useful_tools/
 
 # ---
 
@@ -92,6 +95,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb
 
 # IPython
 profile_default/

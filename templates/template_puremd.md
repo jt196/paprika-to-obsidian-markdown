@@ -14,7 +14,7 @@
 #### scale: $recipe_scale
 #### tags: $recipe_tags
 
-authors: |$my_authors
+author: |$my_authors
 photo_thumbnail: ![Thumbnail]($recipe_photo)
 photos: $photo_list
 image_url: $recipe_image_url
