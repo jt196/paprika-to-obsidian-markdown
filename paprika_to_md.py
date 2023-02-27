@@ -3,7 +3,7 @@ from pathlib import Path
 from string import Template
 import tag_conversion as tag
 from parse_ingredient import parse_ingredient
-from tools import positive_filter, key_swap, filter_list, correct_path, remove_temp_files
+from tools import positive_filter, key_swap, filter_list, correct_path, remove_temp_files, remove_file_extension
 
 
 # this function extracts a .paprikarecipes file into a .temp/ folder, unzips each gzipped recipe file and renames the contents
@@ -65,6 +65,7 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
                 with open(p, encoding="utf-8") as json_file:
                     d = {}
                     recipe_data = json.load(json_file)
+                    bare_filename = remove_file_extension(filename)
                     # assign variable, split according to line breaks, remove any empty entries
                     recipe_ingredients = recipe_data["ingredients"]
                     recipe_ingredients = recipe_ingredients.splitlines()
@@ -214,7 +215,7 @@ def json_manipulate(sourceFolder, targetFolder, resourceFolder, template):
                     with open(template_file, "r") as f:
                         src = Template(f.read())
                         result = src.substitute(d)
-                        g = open(targetFolder + recipe_name + ".md", "w", encoding="utf-8")
+                        g = open(targetFolder + bare_filename + ".md", "w", encoding="utf-8")
                         g.write(result)
                         g.close()
 

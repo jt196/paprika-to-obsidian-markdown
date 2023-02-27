@@ -26,3 +26,8 @@ def remove_temp_files(temp_folder):
     for root, dirs, files in os.walk(temp_folder):
         for file in files:
             os.remove(os.path.join(root, file))
+
+
+def remove_file_extension(filename):
+    # Given a filename, removes the file extension and returns the name without it.
+    return filename.rsplit(".", 1)[0]
